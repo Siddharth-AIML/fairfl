@@ -1,4 +1,4 @@
-# FairFL: Federated Learning with Bias Detection & Ethical Evaluation
+# FairFL: Federated Learning with Bias Detection, Mitigation & Ethical Evaluation
 
 ## Features
 - Federated Learning Simulation
