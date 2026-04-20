@@ -206,7 +206,7 @@ export default function FairnessAnalysis() {
   size="sm"
   className="mt-2"
   onClick={() =>
-    window.open("https://fair-view-eosin.vercel.app/", "_blank","noopener,noreferrer")
+    window.open("https://fair-view-eosin.vercel.app/audit", "_blank","noopener,noreferrer")
   }
 >
   Open Debug Module
