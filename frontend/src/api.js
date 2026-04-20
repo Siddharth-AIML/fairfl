@@ -1,4 +1,4 @@
-const BASE_URL = "http://127.0.0.1:8000";
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 export const submitClientUpdate = async (formData) => {
   const response = await fetch(`${BASE_URL}/client/submit`, {
@@ -15,7 +15,7 @@ export const getClients = async () => {
 };
 
 export const aggregateModel = async () => {
-  const res = await fetch("http://127.0.0.1:8000/server/aggregate", {
+  const res = await fetch(`${BASE_URL}/server/aggregate`, {
     method: "POST"
   });
 
@@ -23,17 +23,17 @@ export const aggregateModel = async () => {
 };
 
 export const runExplainability = async () => {
-  const res = await fetch("http://127.0.0.1:8000/server/aggregate"); // or custom endpoint later
+  const res = await fetch(`${BASE_URL}/server/aggregate`); // or custom endpoint later
   return res.json();
 };
 
 export const getExplainability = async () => {
-  const res = await fetch("http://127.0.0.1:8000/server/explainability");
+  const res = await fetch(`${BASE_URL}/server/explainability`);
   return res.json();
 };
 
 export const loginUser = async (data) => {
-  const res = await fetch("http://127.0.0.1:8000/auth/login", {
+  const res = await fetch(`${BASE_URL}/auth/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -46,13 +46,13 @@ export const loginUser = async (data) => {
 
 export const getMyData = async (clientId) => {
   const res = await fetch(
-    `http://127.0.0.1:8000/client/my-data/${clientId}`
+    `${BASE_URL}/client/my-data/${clientId}`
   );
   return res.json();
 };
 
 export const downloadGlobalModel = async () => {
-  const res = await fetch("http://127.0.0.1:8000/server/download-model");
+  const res = await fetch(`${BASE_URL}/server/download-model`);
 
   const blob = await res.blob();
 
